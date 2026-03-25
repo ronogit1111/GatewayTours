@@ -26,6 +26,7 @@
                         brandBlue: '#1D4ED8', // Blue-700
                         brandLight: '#F8FAFC', // Slate-50 (Off-white)
                         brandDark: '#0F172A',
+                        whatsappGreen: '#25D366',
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -70,6 +71,16 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
+        /* WhatsApp Pulse Animation */
+        @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-float {
+            animation: whatsapp-pulse 2s infinite;
+        }
+
         /* Custom input focus styles */
         input:focus, textarea:focus {
             outline: none;
@@ -79,6 +90,14 @@
     </style>
 </head>
 <body class="antialiased">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8801719019916?text=Hello!%20I'm%20interested%20in%20Indian%20Visa%20Processing%20services." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-[100] bg-whatsappGreen text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl whatsapp-float transition-transform hover:scale-110"
+       title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
@@ -149,7 +168,6 @@
                 <!-- Service 1 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-md service-card gs-reveal">
                     <div class="h-48 overflow-hidden">
-                        <!-- Using user provided links with a fallback to Unsplash in case they are protected/invalid -->
                         <img src="https://instasize.com/p/c3f84b60d451a95f039061a8ab2aaae9af45e2b59f25b13f11529e8c4b11fc17" 
                              onerror="this.src='https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=600'" 
                              alt="Visa Processing" class="w-full h-full object-cover">
@@ -333,7 +351,6 @@
 
     <!-- 5. Call-To-Action Section -->
     <section class="py-20 bg-brandBlue relative overflow-hidden">
-        <!-- Background decorative elements -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-600 opacity-50 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-800 opacity-50 blur-3xl"></div>
         
@@ -361,7 +378,6 @@
                     <div class="bg-brandLight p-8 rounded-2xl shadow-sm border border-gray-100">
                         <h3 class="text-2xl font-bold text-brandDark mb-6">Send a Message</h3>
                         
-                        <!-- Formspree Integration -->
                         <form id="bookingForm" action="https://formspree.io/f/mreogbrr" method="POST" class="space-y-4">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
@@ -380,7 +396,6 @@
                             </button>
                         </form>
                         
-                        <!-- Success Message -->
                         <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center font-medium">
                             <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your booking request has been received. We will contact you shortly.
                         </div>
@@ -390,7 +405,6 @@
                 <!-- Location Map -->
                 <div class="w-full lg:w-1/2 gs-reveal" style="transition-delay: 200ms;">
                     <div class="bg-white p-2 rounded-2xl shadow-md border border-gray-100 h-full min-h-[400px]">
-                        <!-- Google Maps Embed for Dinajpur, Rangpur, Bangladesh -->
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115681.29592731265!2d88.5630510655389!3d25.627954932039535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4cb601d08779b%3A0xc66c1b353ed0988e!2sDinajpur%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1716000000000!5m2!1sen!2sus" 
                             width="100%" 
@@ -404,7 +418,6 @@
                 </div>
             </div>
             
-            <!-- Contact info text -->
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center gs-reveal">
                 <div class="p-4">
                     <i class="fa-solid fa-location-dot text-2xl text-brandBlue mb-3"></i>
@@ -414,7 +427,7 @@
                 <div class="p-4">
                     <i class="fa-solid fa-phone text-2xl text-brandBlue mb-3"></i>
                     <h4 class="font-bold text-brandDark">Phone Number</h4>
-                    <p class="text-gray-600">+880 1700-000000<br>+880 1900-000000</p>
+                    <p class="text-gray-600">+880 1719-019916<br>+880 1700-000000</p>
                 </div>
                 <div class="p-4">
                     <i class="fa-solid fa-envelope text-2xl text-brandBlue mb-3"></i>
@@ -429,7 +442,6 @@
     <footer class="bg-brandDark text-gray-300 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <!-- Brand -->
                 <div class="mb-6 md:mb-0 text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start text-white mb-2">
                         <i class="fa-solid fa-plane-departure text-brandBlue text-2xl mr-2"></i>
@@ -438,7 +450,6 @@
                     <p class="text-sm text-gray-500">Your trusted travel partner in Dinajpur.</p>
                 </div>
 
-                <!-- Social Icons -->
                 <div class="flex space-x-6 mb-6 md:mb-0">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -462,15 +473,12 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <script>
-        // Auto-update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -478,60 +486,41 @@
             menu.classList.toggle('hidden');
         });
 
-        // Close mobile menu on link click
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
         });
 
-        // Form Submission Handling (Formspree AJAX implementation)
         const form = document.getElementById('bookingForm');
         const successMessage = document.getElementById('formSuccess');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // Collect data
             const formData = new FormData(form);
-            
             try {
-                // Submit to formspree (or any endpoint) using fetch
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
-
                 if (response.ok) {
-                    // Show success, clear form
                     form.reset();
                     successMessage.classList.remove('hidden');
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.classList.add('hidden');
-                    }, 5000);
+                    setTimeout(() => { successMessage.classList.add('hidden'); }, 5000);
                 } else {
                     alert("Oops! There was a problem submitting your form.");
                 }
             } catch (error) {
-                // If formspree is blocked or fetch fails, simulate success for demonstration
-                console.log("Form submission simulated due to fetch error:", error);
                 form.reset();
                 successMessage.classList.remove('hidden');
                 setTimeout(() => { successMessage.classList.add('hidden'); }, 5000);
             }
         });
 
-        // GSAP Animations
         document.addEventListener("DOMContentLoaded", (event) => {
-            // Register ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
 
-            // 1. Hero Animation (Fade in + slight upward motion)
             gsap.from(".hero-content > *", {
                 y: 40,
                 opacity: 0,
@@ -541,7 +530,6 @@
                 delay: 0.2
             });
 
-            // Navbar background change on scroll
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -553,15 +541,10 @@
                 }
             });
 
-            // 2. Scroll Trigger Reveals for sections
             const revealElements = document.querySelectorAll(".gs-reveal");
-            
             revealElements.forEach((element) => {
                 gsap.fromTo(element, 
-                    { 
-                        y: 50, 
-                        opacity: 0 
-                    },
+                    { y: 50, opacity: 0 },
                     {
                         y: 0,
                         opacity: 1,
@@ -569,8 +552,8 @@
                         ease: "power2.out",
                         scrollTrigger: {
                             trigger: element,
-                            start: "top 85%", // Animation starts when top of element hits 85% of viewport
-                            toggleActions: "play none none reverse" // Play on scroll down, reverse on scroll up
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
                         }
                     }
                 );
